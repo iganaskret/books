@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="blabla" content="wsir">
+    <meta name="books" content="books">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>What Should I Read?</title>
 </head>
@@ -16,7 +16,20 @@
     <!--<img src="imgs/search-icon.png" alt="search icon" id="search-icon"> -->
     <h1 id="logo">WHAT SHOULD I READ?</h1>
 
+
+  <div id="search">
+        <label for="site-search">Search the book by genre:</label>
+        <input type="search" id="site-search" name="q" aria-label="Search through site content">
+
+        <button class="button-search">Search</button>
+    </div>
+
+
+
+
     <h2 class="recent">Recent posts</h2>
+
+    <hr>
 
     <main></main>
 
@@ -25,9 +38,9 @@
         <article>
             <img class="cover" src="" alt="cover picture">
             <div id="bookmark" src="" alt="bookmark"></div>
-            <h1><span id="title"> TITLE </span> <span id="year"> YEAR </span></h1>
-            <h2 id="author">AUTHOR </h2>
-            <h3> SHORT DESCRIPTION </h3>
+            <h1><span id="title">TITLE</span><span id="year">YEAR</span></h1>
+            <h2 id="author">AUTHOR</h2>
+            <h3>SHORT DESCRIPTION</h3>
             <h4 id="stars"> &#9733; &#9733; &#9733; &#9733; &#9734;</h4>
             <!--h5>PRICE</h5>
             <h6>SHORT DESCRIPTION</h6>
@@ -35,6 +48,7 @@
             FYI
             H8 AND H7 DON'T EXIST, ONLY H1-H6
             <h8>PAGES</h8>-->
+            <button class="button-info">FULL REVIEW</button>
         </article>
     </template>
 
