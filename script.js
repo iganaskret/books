@@ -17,10 +17,8 @@
      console.log(data);
 
      const clone = template.cloneNode('true');
-     //clone.querySelector("p").textContent = data.gsx$img.$t;
-     clone.querySelector("img").src = "imgs/1.jpg";
-
-
+     const img = data.gsx$img.$t;
+     clone.querySelector("img").src = "imgs/" + data.gsx$img.$t;
      clone.querySelector("#title").textContent = data.gsx$title.$t;
      clone.querySelector("#author").textContent = data.gsx$author.$t;
      clone.querySelector("#year").textContent = " (" + data.gsx$publishingyear.$t + ")";
@@ -37,21 +35,7 @@
  }
 
 
-//document.getElementById("demo").addEventListener("mouseover", mouseOver);
-//document.getElementById("demo").addEventListener("mouseout", mouseOut);
-
-//unction mouseOver() {
-  //document.getElementById("demo").style.color = "red";
-//}
-
-//function mouseOut() {
-  //document.getElementById("demo").style.color = "black";
-//}
-
-
  loadJSON(link);
-
-
 
 
 
