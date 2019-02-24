@@ -1,8 +1,9 @@
 /* ROOT */
 
 :root {
-    --main-bg-color: #faf7f3;
-    --text-color: black;
+    --main-bg-color: #ffffff;
+    --text-color: #000000;
+    --special-color: #eea549;
 }
 
 /* BODY */
@@ -15,19 +16,30 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.recent{
+.recent {
     font-weight: 300;
     font-family: 'Lato', sans-serif;
     font-size: 2em;
     text-transform: uppercase;
 }
 
-h1,h2,h3,h4{
+h1,
+h2,
+h3,
+h4 {
     font-weight: 100;
 }
 
-#author{
+#title {
     font-weight: 500;
+}
+
+h1 {
+    text-align: center;
+}
+
+#year {
+    font-size: 13px;
 }
 
 /* LOGO */
@@ -64,10 +76,10 @@ article {
     /*grid-template-rows: 6fr;*/
 }
 
-article:hover{
-    transform: scale(1.1);
-    border: 2px solid var(--text-color);
-    transition: 0.7s ease-in-out;
+article:hover {
+    transform: scale(1.05);
+    border: 3px solid var(--special-color);
+    transition: 0.3s ease-in-out;
 }
 
 
@@ -89,15 +101,15 @@ main {
 /* IMAGE */
 
 .cover {
-    width: 50%;
-    height: auto;
+    width: auto;
+    height: 17em;
     padding: .5em;
     margin-left: auto;
     margin-right: auto;
     grid-template-columns: 1fr;
 }
 
-#stars{
+#stars {
     text-align: center;
 }
 
@@ -121,14 +133,14 @@ main {
 }
 
 .button-info:hover {
-    background-color: #e1deda;
-    border: solid #e1deda 1px;
-    transition: 0.5s ease-in;
+    border: solid grey 1px;
+    transition: 0.3s ease-in;
+    background-color: grey;
 }
 
 /*  SEARCH */
 
-#search{
+#search {
     display: block;
     margin-left: auto;
     margin-right: 0;
@@ -137,7 +149,7 @@ main {
 
 /*  BUTTON  SEARCH*/
 
-#site-search{
+#site-search {
     font-family: 'Lato', sans-serif;
 }
 
@@ -156,14 +168,3 @@ main {
 }
 
 /*  BUTTON  NEW*/
-
-
-
-
-
-
-
-
-
-
-
