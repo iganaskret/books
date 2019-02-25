@@ -56,7 +56,6 @@ h1 {
 
 .navbar {
     width: 100%;
-    overflow: hidden;
     height: 70px;
     line-height: 70px;
     background: var(--main-bg-color);
@@ -69,6 +68,7 @@ h1 {
     padding: .3em;
 }
 
+/* SMALL SCREENS */
 @media all and (max-width:700px) {
     nav {
         display: none;
@@ -86,8 +86,34 @@ h1 {
     #menu:checked ~ nav {
         display: block;
     }
+
+    nav {
+        float: right;
+        margin-top: 48px;
+    }
+
+    nav li {
+        line-height: 50px;
+        text-align: right;
+        list-style: none;
+    }
+
+    nav li a {
+        color: var(--text-color);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-family: 'Lato', sans-serif;
+        font-size: 15px;
+        display: block;
+    }
+
+    nav li a:hover {
+        color: var(--special-color);
+    }
 }
 
+/* BIG SCREENS */
 @media all and (min-width:700px) {
     input:not(:checked) ~ nav {
         display: block;
@@ -100,42 +126,45 @@ h1 {
     #menu {
         display: none;
     }
+
+    /* UL TAG BIG SCREENS */
+
+    nav {
+        float: right;
+        top: 0;
+    }
+
+    nav li {
+        float: left;
+        width: 110px;
+        height: 70px;
+        line-height: 50px;
+        text-align: center;
+        list-style: none;
+    }
+
+    nav li a {
+        color: var(--text-color);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-family: 'Lato', sans-serif;
+        font-size: 15px;
+        display: block;
+    }
+
+    nav li:hover {
+        background: var(--special-color);
+    }
+
+    nav li a:hover {
+        color: var(--main-bg-color);
+    }
+
+    .navbar {
+        overflow: hidden;
+    }
 }
-
-/* UL TAG */
-
-nav {
-    float: right;
-    top: 0;
-}
-
-nav li {
-    float: left;
-    width: 110px;
-    height: 70px;
-    line-height: 50px;
-    text-align: center;
-    list-style: none;
-}
-
-nav li a {
-    color: var(--text-color);
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-family: 'Lato', sans-serif;
-    font-size: 15px;
-    display: block;
-}
-
-nav li:hover {
-    background: var(--special-color);
-}
-
-nav li a:hover {
-    color: var(--main-bg-color);
-}
-
 
 /* LOGO */
 
@@ -162,6 +191,7 @@ hr {
 /* GRID */
 
 article {
+    margin-top: 2em;
     margin-bottom: 2em;
     display: grid;
     padding: .5em;
