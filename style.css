@@ -44,6 +44,12 @@ h1 {
     font-size: 13px;
 }
 
+h5 {
+    color: var(--special-color);
+    font-size: 13px;
+    margin: 0.5em;
+}
+
 /* NAVIGATION */
 
 .container {

@@ -1,20 +1,49 @@
  // Template constants
 
  const link = "https://spreadsheets.google.com/feeds/list/1AQBvg1C7bOtdJcQPhTgwYS0_4Pojq2fyz4X3EbZp4I8/od6/public/values?alt=json";
+ const linkCat = "https://spreadsheets.google.com/feeds/list/1g4L6l6l7nG86TEMtBzwR04zwwEwT6NB8hVTqevM989o/od6/public/values?alt=json";
  const bookmark = document.querySelector(".bookmark");
  const template = document.querySelector('template').content;
  const main = document.querySelector('main');
+ const genre = document.querySelector('#genre');
  const article = document.querySelector('article');
  const modal = document.querySelector(".modal-background"); //MODAL
+ const modalCat = document.querySelector(".modal-background-cat"); //MODAL GENRES
  modal.addEventListener("click", () => modal.classList.add("hide"));
+ modalCat.addEventListener("click", () => modalCat.classList.add("hide"));
+ genre.addEventListener("click", () => modalCat.classList.remove("hide"));
 
  function loadJSON(link) {
      fetch(link).then(e => e.json()).then(data => data.feed.entry.forEach(displayBooksData));
  }
 
- function displayBooksData(data) {
+ function loadCat(link) {
+     fetch(linkCat).then(e => e.json()).then(data => data.feed.entry.forEach(createCategories));
+ }
 
-     console.log(data);
+ function createCategories(data) {
+     data.forEach(cat => {
+         const newA = document.createElement("a");
+         newA.textContent = cat;
+         newA.href = "#";
+         newA.addEventListener("click", () => showCategory(cat));
+         modalCat.appendChild(newA);
+     })
+ }
+
+ /*function showCategory(category) {
+     document.querySelectorAll("genre a").forEach(section => {
+         if (section.id == category || category == "all") {
+             section.style.display = "grid";
+             section.previousElementSibling.style.display = "block";
+         } else {
+             section.style.display = "none";
+             section.previousElementSibling.style.display = "none";
+         };
+     })
+ };*/
+
+ function displayBooksData(data) {
      const clone = template.cloneNode('true');
 
      // ----------------- MODAL INFORMATION -----------------
@@ -46,16 +75,10 @@
      clone.querySelector("#author").textContent = data.gsx$author.$t;
      clone.querySelector("#year").textContent = " (" + data.gsx$publishingyear.$t + ")";
      clone.querySelector("h3").textContent = data.gsx$shortdescription.$t;
-     //clone.querySelector("h5").textContent = data.gsx$price.$t
-     //clone.querySelector("h6").textContent = data.gsx$shortdescription.$t
-     //clone.querySelector("h7").textContent = data.gsx$longdescription.$t
-     //clone.querySelector("h8").textContent = data.gsx$numberofpages.$t
+     clone.querySelector("h5").textContent = data.gsx$genres.$t;
+     clone.querySelector(".bkm").addEventListener("click", bookmarkChecked);
 
-     // Get the modal
-
-      clone.querySelector(".bkm").addEventListener("click", bookmarkChecked);
-
-     function bookmarkChecked (evt) {
+     function bookmarkChecked(evt) {
          console.log(evt)
          //clone.querySelector(".bkm").classList.remove("bookmark");
          evt.target.classList.toggle("checked");
@@ -65,7 +88,4 @@
  }
 
  loadJSON(link);
-
-
-
- // MODAL SECTIONS
+ loadCat(linkCat);
