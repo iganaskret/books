@@ -5,31 +5,55 @@
  const template = document.querySelector('template').content;
  const main = document.querySelector('main');
  const article = document.querySelector('article');
- //const section = document.querySelector('section');
+ const modal = document.querySelector(".modal-background"); //MODAL
+ modal.addEventListener("click", () => modal.classList.add("hide"));
 
  function loadJSON(link) {
      fetch(link).then(e => e.json()).then(data => data.feed.entry.forEach(displayBooksData));
  }
 
-
  function displayBooksData(data) {
 
      console.log(data);
-
      const clone = template.cloneNode('true');
+
+     // ----------------- MODAL INFORMATION -----------------
+
+     clone.querySelector("button").addEventListener("click", () => {
+         var span = document.getElementsByClassName("close")[0];
+
+
+         // NO NEED TO FETCH THE SAME LINK AGAIN, JUST CREATE A FUNCTION THAT WILL HANDLE THE BOOK data
+         detailBooksData(data);
+     })
+
+     function detailBooksData(data) {
+         modal.querySelector("img").src = "imgs/" + data.gsx$img.$t;
+         modal.querySelector("#title").textContent = data.gsx$title.$t;
+         modal.querySelector("#year").textContent = " (" + data.gsx$publishingyear.$t + ")";
+         modal.querySelector("#author").textContent = data.gsx$author.$t;
+         modal.querySelector("#long").textContent = data.gsx$longdescription.$t;
+         modal.querySelector("#price").textContent = Math.ceil(data.gsx$price.$t) + " $";
+         modal.querySelector("#pages").textContent = data.gsx$numberofpages.$t + " pages";
+         modal.classList.remove('hide');
+     }
+
+     // ----------------- END MODAL INFORMATION -----------------
+
      const img = data.gsx$img.$t;
      clone.querySelector("img").src = "imgs/" + data.gsx$img.$t;
      clone.querySelector("#title").textContent = data.gsx$title.$t;
      clone.querySelector("#author").textContent = data.gsx$author.$t;
      clone.querySelector("#year").textContent = " (" + data.gsx$publishingyear.$t + ")";
-     clone.querySelector("h3").textContent = data.gsx$shortdescription.$t
+     clone.querySelector("h3").textContent = data.gsx$shortdescription.$t;
      //clone.querySelector("h5").textContent = data.gsx$price.$t
      //clone.querySelector("h6").textContent = data.gsx$shortdescription.$t
      //clone.querySelector("h7").textContent = data.gsx$longdescription.$t
      //clone.querySelector("h8").textContent = data.gsx$numberofpages.$t
 
-     //BOOKMARK TOGGLE- DOESN'T WORK, ASK A TEACHER
-     clone.querySelector(".bkm").addEventListener("click", bookmarkChecked);
+     // Get the modal
+
+      clone.querySelector(".bkm").addEventListener("click", bookmarkChecked);
 
      function bookmarkChecked (evt) {
          console.log(evt)
