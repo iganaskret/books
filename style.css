@@ -69,7 +69,21 @@ h1 {
     padding: .3em;
 }
 
-@media all and (min-width:400px) {
+@media all and (max-width:700px) {
+    nav {
+        display: none;
+    }
+
+    #menu {
+        display: none;
+    }
+    label {
+        display: block;
+         float: right;
+    }
+}
+
+@media all and (min-width:700px) {
     input:not(:checked) ~ nav {
         display: block;
     }
@@ -83,28 +97,14 @@ h1 {
     }
 }
 
-@media all and (max-width:400px) {
-    nav {
-        display: none;
-    }
-
-    #menu {
-        display: none;
-    }
-
-    #menu:checked ~ nav {
-        display: block;
-    }
-}
-
 /* UL TAG */
 
-.menu {
+nav {
     float: right;
     top: 0;
 }
 
-.menu li {
+nav li {
     float: left;
     width: 110px;
     height: 70px;
@@ -113,7 +113,7 @@ h1 {
     list-style: none;
 }
 
-.menu li a {
+nav li a {
     color: var(--text-color);
     text-decoration: none;
     text-transform: uppercase;
@@ -123,11 +123,11 @@ h1 {
     display: block;
 }
 
-.menu li:hover {
+nav li:hover {
     background: var(--special-color);
 }
 
-.menu li a:hover {
+nav li a:hover {
     color: var(--main-bg-color);
 }
 
