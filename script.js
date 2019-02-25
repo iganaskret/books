@@ -1,7 +1,7 @@
  // Template constants
 
  const link = "https://spreadsheets.google.com/feeds/list/1AQBvg1C7bOtdJcQPhTgwYS0_4Pojq2fyz4X3EbZp4I8/od6/public/values?alt=json";
- const bookmark = document.querySelector("#bookmark");
+ const bookmark = document.querySelector(".bookmark");
  const template = document.querySelector('template').content;
  const main = document.querySelector('main');
  const article = document.querySelector('article');
@@ -29,7 +29,13 @@
      //clone.querySelector("h8").textContent = data.gsx$numberofpages.$t
 
      //BOOKMARK TOGGLE- DOESN'T WORK, ASK A TEACHER
-     clone.querySelector("#bookmark").addEventListener("click", () => clone.querySelector("#bookmark").classList.toggle("checked"));
+     clone.querySelector(".bkm").addEventListener("click", bookmarkChecked);
+
+     function bookmarkChecked (evt) {
+         console.log(evt)
+         //clone.querySelector(".bkm").classList.remove("bookmark");
+         evt.target.classList.toggle("checked");
+     }
 
      main.appendChild(clone);
  }
