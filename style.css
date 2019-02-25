@@ -319,6 +319,7 @@ footer {
     text-align: center;
     padding: 1em;
 }
+
 /*  MODAL */
 
 /* CATEGORIES MADE BY JAVA SCRIPT */
@@ -374,19 +375,19 @@ aside .cover {
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: white;
 }
 
 .modal-content-cat {
     background-color: var(--main-bg-color);
-    border: 1px solid black;
     margin: 1em;
     padding: 2em;
 }
 
-a{
+a {
     color: var(--special-color);
     font-family: 'Lato', sans-serif;
+    text-decoration: none;
 }
 
 .cat-list {
@@ -395,6 +396,22 @@ a{
     text-align: center;
     text-decoration: none;
     list-style: none;
-    line-height: 10px;
+    line-height: 40px;
+    font-size: 18px;
 }
 
+@keyframes genrehover {
+    from {
+        font-size: 18px;
+        color: var(--special-color);
+    }
+
+    to {
+        font-size: 22px;
+        color: #aaaaaa;
+    }
+}
+
+.cat-list :hover {
+    animation: genrehover 1.8s;
+}

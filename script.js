@@ -19,33 +19,25 @@
      fetch(link).then(e => e.json()).then(data => data.feed.entry.forEach(displayBooksData));
  }
 
-// MODAL CATEGORIES //
+ // MODAL CATEGORIES //
 
-  function loadCat(link) {
+ function loadCat(link) {
      fetch(linkCat).then(e => e.json()).then(data => data.feed.entry.forEach(createCategories));
  }
 
-function createCategories(category) {
-         const newLi = document.createElement("li");
-         const newA = document.createElement("a")
-         newA.textContent = category.gsx$genres.$t;;
-         newA.href = "#";
-         newA.addEventListener("click", () => showCategory(cat));
-         modalCatList.appendChild(newLi);
-         modalCatList.appendChild(newA);
-     }
+ function createCategories(category) {
+     const newLi = document.createElement("li");
+     const newA = document.createElement("a")
+     newA.textContent = category.gsx$genres.$t;;
+     newA.href = "#";
+     newA.addEventListener("click", () => showCategory(category));
+     modalCatList.appendChild(newLi);
+     modalCatList.appendChild(newA);
+ }
 
  function showCategory(category) {
-     document.querySelectorAll("genre a").forEach(section => {
-         if (section.id == category || category == "all") {
-             section.style.display = "grid";
-             section.previousElementSibling.style.display = "block";
-         } else {
-             section.style.display = "none";
-             section.previousElementSibling.style.display = "none";
-         };
-     })
- };
+
+ }
 
  // END OF MODAL CATEGORIES //
 
