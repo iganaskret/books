@@ -9,6 +9,8 @@
  const article = document.querySelector('article');
  const modal = document.querySelector(".modal-background"); //MODAL
  const modalCat = document.querySelector(".modal-background-cat"); //MODAL GENRES
+ const modalCatContent = document.querySelector(".modal-content-cat");
+ const modalCatList = document.querySelector(".cat-list");
  modal.addEventListener("click", () => modal.classList.add("hide"));
  modalCat.addEventListener("click", () => modalCat.classList.add("hide"));
  genre.addEventListener("click", () => modalCat.classList.remove("hide"));
@@ -17,21 +19,23 @@
      fetch(link).then(e => e.json()).then(data => data.feed.entry.forEach(displayBooksData));
  }
 
- function loadCat(link) {
+// MODAL CATEGORIES //
+
+  function loadCat(link) {
      fetch(linkCat).then(e => e.json()).then(data => data.feed.entry.forEach(createCategories));
  }
 
- function createCategories(data) {
-     data.forEach(cat => {
-         const newA = document.createElement("a");
-         newA.textContent = cat;
+function createCategories(category) {
+         const newLi = document.createElement("li");
+         const newA = document.createElement("a")
+         newA.textContent = category.gsx$genres.$t;;
          newA.href = "#";
          newA.addEventListener("click", () => showCategory(cat));
-         modalCat.appendChild(newA);
-     })
- }
+         modalCatList.appendChild(newLi);
+         modalCatList.appendChild(newA);
+     }
 
- /*function showCategory(category) {
+ function showCategory(category) {
      document.querySelectorAll("genre a").forEach(section => {
          if (section.id == category || category == "all") {
              section.style.display = "grid";
@@ -41,7 +45,9 @@
              section.previousElementSibling.style.display = "none";
          };
      })
- };*/
+ };
+
+ // END OF MODAL CATEGORIES //
 
  function displayBooksData(data) {
      const clone = template.cloneNode('true');
