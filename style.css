@@ -88,14 +88,17 @@ h1 {
     }
 
     nav {
-        float: right;
-        margin-top: 48px;
+        position: absolute;
+        margin-top: 57px;
+        right: 8%;
+        padding: 5px;
     }
 
     nav li {
-        line-height: 50px;
+        line-height: 25px;
         text-align: right;
         list-style: none;
+        border-bottom: 1.5px solid var(--special-color);
     }
 
     nav li a {
@@ -191,7 +194,6 @@ hr {
 /* GRID */
 
 article {
-    margin-top: 2em;
     margin-bottom: 2em;
     display: grid;
     padding: .5em;
