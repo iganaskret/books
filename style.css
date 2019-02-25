@@ -71,23 +71,11 @@ h1 {
     float: right;
     margin-top: inherit;
     margin-left: 10px;
-}
-
-.search_icon_small {
-    display: none;
+    margin-right: 0;
 }
 
 /* SMALL SCREENS */
 @media all and (max-width:700px) {
-    .search_icon_big {
-        display: none;
-    }
-    .search_icon_small {
-        display: block;
-        width: 20px;
-        float: right;
-        margin-top: inherit;
-    }
     nav {
         display: none;
     }
@@ -131,6 +119,10 @@ h1 {
 
     nav li a:hover {
         color: var(--special-color);
+    }
+
+    .recent {
+        margin-top: 130px;
     }
 }
 
@@ -285,11 +277,14 @@ main {
 }
 
 /* BOOKMARK */
-*, *:before, *:after{
+*,
+*:before,
+*:after {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
+
 .bookmark {
     position: absolute;
     top: 0;
@@ -306,7 +301,8 @@ main {
     margin-top: 0;
     cursor: pointer;
 }
-.checked{
+
+.checked {
 
     border-left: 25px solid #e06256;
     border-right: 25px solid #e06256;
