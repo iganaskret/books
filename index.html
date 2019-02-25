@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="books" content="books">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" type="image/jpg" href="imgs/favicon.jpg">
     <title>What Should I Read?</title>
 </head>
 
@@ -40,14 +41,28 @@
         <button class="button-search">Search</button>
     </div>-->
 
-
-
-
     <h2 class="recent">Recent posts</h2>
-
 
     <main></main>
 
+    <!-- The Modal -->
+
+    <div class="modal-background hide">
+        <aside class="modal-content">
+            <span class="close">&times;</span>
+            <img class="cover" src="imgs/1.jpg" alt="cover picture">
+            <h1><span id="title">TITLE</span><span id="year">YEAR</span></h1>
+            <h2 id="author">AUTHOR</h2>
+            <h3 id="long">LONG DESCRIPTION</h3>
+            <h4 id="price">PRICE</h4>
+            <h5 id="pages">PAGES</h5>
+            <h4 id="stars"> &#9733; &#9733; &#9733; &#9733; &#9734;</h4>
+        </aside>
+    </div>
+
+    <!-- End of the Modal -->
+
+     <!-- Template -->
 
     <template>
         <article>
@@ -63,7 +78,7 @@
             FYI
             H8 AND H7 DON'T EXIST, ONLY H1-H6
             <h8>PAGES</h8>-->
-            <button class="button-info">FULL REVIEW</button>
+            <button id="myBtn" class="button-info">FULL REVIEW</button>
         </article>
     </template>
 

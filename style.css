@@ -6,9 +6,6 @@
     --special-color: #eea549;
 }
 
-
-
-
 /* BODY */
 
 body {
@@ -63,7 +60,7 @@ h1 {
     border-bottom: 3px solid var(--special-color);
 }
 
-.logo{
+.logo {
     width: 60px;
     float: left;
     padding: .3em;
@@ -71,12 +68,12 @@ h1 {
 
 /* UL TAG */
 
-.menu{
+.menu {
     float: right;
     top: 0;
 }
 
-.menu li{
+.menu li {
     float: left;
     width: 110px;
     height: 70px;
@@ -85,7 +82,7 @@ h1 {
     list-style: none;
 }
 
-.menu li a{
+.menu li a {
     color: var(--text-color);
     text-decoration: none;
     text-transform: uppercase;
@@ -95,10 +92,11 @@ h1 {
     display: block;
 }
 
-.menu li:hover{
+.menu li:hover {
     background: var(--special-color);
 }
-.menu li a:hover{
+
+.menu li a:hover {
     color: var(--main-bg-color);
 }
 
@@ -229,9 +227,57 @@ main {
     margin-bottom: 1em;
 }
 
-footer{
+footer {
     text-align: center;
     padding: 1em;
 }
 
-/*  BUTTON  NEW*/
+/*  MODAL */
+
+/* CATEGORIES MADE BY JAVA SCRIPT */
+
+.hide {
+    display: none;
+}
+
+.modal-background {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-content {
+    background-color: var(--main-bg-color);
+    border: 1px solid black;
+    margin: 1em;
+    padding: 2em;
+}
+
+aside {
+    width: 93%;
+    padding: 1em;
+}
+
+aside .cover {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
