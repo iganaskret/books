@@ -57,6 +57,7 @@ h1 {
     line-height: 70px;
     background: var(--main-bg-color);
     border-bottom: 3px solid var(--special-color);
+
 }
 
 .logo {
@@ -195,6 +196,7 @@ article {
     display: grid;
     padding: .5em;
     border: 1px solid var(--text-color);
+    position: relative;
     /*grid-template-columns: 2fr;*/
     /*grid-auto-flow: dense;*/
     /*grid-template-rows: 6fr;*/
@@ -285,20 +287,10 @@ main {
     cursor: pointer;
 }
 .checked{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 70px;
-    width: 50px;
-    padding: 0px;
-    -webkit-transform: rotate(0deg) skew(0deg);
-    transform: rotate(0deg) skew(0deg);
+
     border-left: 25px solid #e06256;
     border-right: 25px solid #e06256;
-    border-bottom: 25px solid transparent;
-    margin: 7px;
-    margin-top: 0;
-    cursor: pointer;
+
 }
 
 /*  SEARCH */
