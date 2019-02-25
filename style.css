@@ -69,6 +69,19 @@ h1 {
     padding: .3em;
 }
 
+@media all and (max-width:400px) {
+nav {
+    display: none;
+}
+
+#menu {
+    display: none;
+}
+
+#menu:checked ~ nav {
+    display: block;
+    }}
+
 /* UL TAG */
 
 .menu{
