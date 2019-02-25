@@ -77,9 +77,14 @@ h1 {
     #menu {
         display: none;
     }
+
     label {
         display: block;
-         float: right;
+        float: right;
+    }
+
+    #menu:checked ~ nav {
+        display: block;
     }
 }
 
