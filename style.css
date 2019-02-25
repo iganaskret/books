@@ -6,9 +6,6 @@
     --special-color: #eea549;
 }
 
-
-
-
 /* BODY */
 
 body {
@@ -263,6 +260,45 @@ main {
     border: solid grey 1px;
     transition: 0.3s ease-in;
     background-color: grey;
+}
+
+/* BOOKMARK */
+*, *:before, *:after{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.bookmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 70px;
+    width: 50px;
+    padding: 0px;
+    -webkit-transform: rotate(0deg) skew(0deg);
+    transform: rotate(0deg) skew(0deg);
+    border-left: 25px solid lightgray;
+    border-right: 25px solid lightgray;
+    border-bottom: 25px solid transparent;
+    margin: 7px;
+    margin-top: 0;
+    cursor: pointer;
+}
+.checked{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 70px;
+    width: 50px;
+    padding: 0px;
+    -webkit-transform: rotate(0deg) skew(0deg);
+    transform: rotate(0deg) skew(0deg);
+    border-left: 25px solid #e06256;
+    border-right: 25px solid #e06256;
+    border-bottom: 25px solid transparent;
+    margin: 7px;
+    margin-top: 0;
+    cursor: pointer;
 }
 
 /*  SEARCH */
