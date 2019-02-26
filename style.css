@@ -333,9 +333,8 @@ main {
 
 footer {
     text-align: center;
-    padding: 1em;
+    padding: 0.4em;
     color: black;
-    background-color: #fdc163;
 }
 
 /*  MODAL */
@@ -402,6 +401,13 @@ aside .cover {
     padding: 2em;
 }
 
+.modal-genres-title {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
 a {
     color: var(--special-color);
     font-family: 'Lato', sans-serif;
@@ -410,7 +416,7 @@ a {
 
 .cat-list {
     margin: auto;
-    margin-left: -4%;
+    margin-left: -3%;
     text-align: center;
     text-decoration: none;
     list-style: none;

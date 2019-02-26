@@ -83,7 +83,7 @@
  function showCategory(category) {
      // if the name of the category == name of the category in the article (h5) then display it, otherwise don't //
       document.querySelectorAll("article").forEach(article =>{
-                if (article.genre == category) {
+                if (article.querySelector(".genre") == category) {
                     article.style.display = "grid";
                     console.log("jest taka książka");
                 } else {
