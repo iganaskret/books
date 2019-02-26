@@ -1,4 +1,4 @@
- // Template constants
+   // Template constants
 
  const link = "https://spreadsheets.google.com/feeds/list/1AQBvg1C7bOtdJcQPhTgwYS0_4Pojq2fyz4X3EbZp4I8/od6/public/values?alt=json";
  const linkCat = "https://spreadsheets.google.com/feeds/list/1g4L6l6l7nG86TEMtBzwR04zwwEwT6NB8hVTqevM989o/od6/public/values?alt=json";
@@ -58,7 +58,7 @@
          modal.querySelector("img").src = "imgs/" + data.gsx$img.$t;
          modal.querySelector("#title").textContent = data.gsx$title.$t;
          modal.querySelector("#year").textContent = " (" + data.gsx$publishingyear.$t + ")";
-         modal.querySelector("#author").textContent = data.gsx$author.$t;
+         modal.querySelector("#author").textContent = "by " + data.gsx$author.$t;
          modal.querySelector("#long").textContent = data.gsx$longdescription.$t;
          modal.querySelector("#price").textContent = Math.ceil(data.gsx$price.$t) + " $";
          modal.querySelector("#pages").textContent = data.gsx$numberofpages.$t + " pages";
