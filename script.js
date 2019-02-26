@@ -6,6 +6,7 @@
  const template = document.querySelector('template').content;
  const main = document.querySelector('main');
  const genre = document.querySelector('#genre');
+ const homeBtn = document.querySelector('#home-btn');
  const article = document.querySelector('article');
  const modal = document.querySelector(".modal-background"); //MODAL
  const modalCat = document.querySelector(".modal-background-cat"); //MODAL GENRES
@@ -49,7 +50,7 @@
      const img = data.gsx$img.$t;
      clone.querySelector("img").src = "imgs/" + data.gsx$img.$t;
      clone.querySelector("#title").textContent = data.gsx$title.$t;
-     clone.querySelector("#author").textContent = data.gsx$author.$t;
+     clone.querySelector("#author").textContent = "by " + data.gsx$author.$t;
      clone.querySelector("#year").textContent = " (" + data.gsx$publishingyear.$t + ")";
      clone.querySelector("h3").textContent = data.gsx$shortdescription.$t;
      clone.querySelector("h5").textContent = data.gsx$genres.$t;
