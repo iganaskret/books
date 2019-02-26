@@ -1,9 +1,9 @@
 /* ROOT */
 
 :root {
-    --main-bg-color: #ffffff;
-    --text-color: #000000;
-    --special-color: #eea549;
+    --main-bg-color: #FFF;
+    --text-color: #000;
+    --special-color: #fdc163;
 }
 
 
@@ -15,7 +15,6 @@ body {
     background-color: var(--main-bg-color);
     width: calc(100vw/ 1.2);
     margin: auto;
-    font-size: 15px;
     font-family: 'Lato', sans-serif;
 }
 
@@ -33,16 +32,27 @@ h2,
 h3,
 h4 {
     font-weight: 100;
+     font-size: 15px;
+   margin-left: 10px;
+    margin-right: 10px;
 }
 
 #title {
     font-weight: 500;
+    font-size: 20px;
+
 }
+
 
 h1 {
-    text-align: center;
+    text-align: left;
+    margin-bottom: -5px;
 }
 
+h2 {
+    font-size: 18px;
+
+}
 #year {
     font-size: 13px;
 }
@@ -132,16 +142,18 @@ article {
     margin-bottom: 2em;
     display: grid;
     padding: .5em;
-    border: 1px solid var(--text-color);
+    border: 1.5px solid var(--text-color);
     /*grid-template-columns: 2fr;*/
     /*grid-auto-flow: dense;*/
     /*grid-template-rows: 6fr;*/
+    background-color: #FFF;
 }
 
 article:hover {
     transform: scale(1.05);
     border: 3px solid var(--special-color);
     transition: 0.3s ease-in-out;
+
 }
 
 
@@ -165,10 +177,12 @@ main {
 .cover {
     width: auto;
     height: 17em;
-    padding: .5em;
+    /*padding: .5em;*/
     margin-left: auto;
     margin-right: auto;
     grid-template-columns: 1fr;
+    border: 2px solid black;
+
 }
 
 #stars {
@@ -183,10 +197,11 @@ main {
     text-transform: uppercase;
     font-family: 'Lato', sans-serif;
     font-size: 10px;
+    color: #fff;
     letter-spacing: 2px;
-    border: solid black 1px;
-    background-color: inherit;
-    padding: 12px 66px;
+    border: solid black 2px;
+    background-color: #000;
+    padding: 12px 55px;
     cursor: pointer;
     display: block;
     margin-left: auto;
@@ -197,7 +212,7 @@ main {
 .button-info:hover {
     border: solid grey 1px;
     transition: 0.3s ease-in;
-    background-color: grey;
+    background-color:grey;
 }
 
 /*  SEARCH */
@@ -232,6 +247,9 @@ main {
 footer{
     text-align: center;
     padding: 1em;
+    color: black;
+    background-color:#fdc163;
+
 }
 
 /*  BUTTON  NEW*/
