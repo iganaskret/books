@@ -6,6 +6,7 @@
  const template = document.querySelector('template').content;
  const main = document.querySelector('main');
  const genre = document.querySelector('#genre');
+ const homeBtn = document.querySelector('#home-btn');
  const article = document.querySelector('article');
  const modal = document.querySelector(".modal-background"); //MODAL
  const modalCat = document.querySelector(".modal-background-cat"); //MODAL GENRES
