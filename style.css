@@ -207,6 +207,7 @@ h2 {
     text-align: center;
     letter-spacing: 9px;
     color: var(--special-color);
+    font-size: 35px;
 }
 
 #quote {
