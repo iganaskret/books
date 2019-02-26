@@ -44,6 +44,12 @@ h1 {
     font-size: 13px;
 }
 
+h5 {
+    color: var(--special-color);
+    font-size: 13px;
+    margin: 0.5em;
+}
+
 /* NAVIGATION */
 
 .container {
@@ -313,6 +319,7 @@ footer {
     text-align: center;
     padding: 1em;
 }
+
 /*  MODAL */
 
 /* CATEGORIES MADE BY JAVA SCRIPT */
@@ -336,11 +343,7 @@ footer {
     border: 1px solid black;
     margin: 1em;
     padding: 2em;
-}
-
-aside {
     width: 93%;
-    padding: 1em;
 }
 
 aside .cover {
@@ -361,4 +364,54 @@ aside .cover {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* GENRES MODAL */
+
+.modal-background-cat {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+
+.modal-content-cat {
+    background-color: var(--main-bg-color);
+    margin: 1em;
+    padding: 2em;
+}
+
+a {
+    color: var(--special-color);
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+}
+
+.cat-list {
+    margin: auto;
+    margin-left: -4%;
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+    line-height: 40px;
+    font-size: 18px;
+}
+
+@keyframes genrehover {
+    from {
+        font-size: 18px;
+        color: var(--special-color);
+    }
+
+    to {
+        font-size: 22px;
+        color: #aaaaaa;
+    }
+}
+
+.cat-list :hover {
+    animation: genrehover 1.8s;
 }

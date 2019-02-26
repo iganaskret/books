@@ -26,7 +26,7 @@
                 <nav>
                     <ul>
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">Genres</a></li>
+                        <li><a href="#" id="genre">Genres</a></li>
                         <li><a href="#">About Us</a></li>
                         <img src="imgs/search-icon.png" alt="search icon" class="search_icon_big">
                     </ul>
@@ -51,7 +51,7 @@
 
     <main></main>
 
-    <!-- The Modal -->
+    <!-- The Modal Book Info-->
 
     <div class="modal-background hide">
         <aside class="modal-content">
@@ -66,8 +66,22 @@
         </aside>
     </div>
 
-    <!-- End of the Modal -->
-   <!-- Template -->
+    <!-- End of the Modal Book Info -->
+
+    <!-- Modal Categories -->
+
+    <div class="modal-background-cat hide">
+        <aside class="modal-content-cat">
+            <span class="close">&times;</span>
+            <h1>GENRES</h1>
+            <ul class="cat-list">
+            </ul>
+        </aside>
+    </div>
+
+    <!-- End of the Modal Categories -->
+
+    <!-- Template -->
 
     <template>
         <article>
@@ -76,13 +90,8 @@
             <h1><span id="title">TITLE</span><span id="year">YEAR</span></h1>
             <h2 id="author">AUTHOR</h2>
             <h3>SHORT DESCRIPTION</h3>
+            <h5> GENRE </h5>
             <h4 id="stars"> &#9733; &#9733; &#9733; &#9733; &#9734;</h4>
-            <!--h5>PRICE</h5>
-            <h6>SHORT DESCRIPTION</h6>
-            <h7>LONG DESCRIPTION</h7>
-            FYI
-            H8 AND H7 DON'T EXIST, ONLY H1-H6
-            <h8>PAGES</h8>-->
             <button id="myBtn" class="button-info">FULL REVIEW</button>
         </article>
     </template>
