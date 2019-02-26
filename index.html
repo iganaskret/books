@@ -25,7 +25,7 @@
                 <input type="checkbox" id="menu">
                 <nav>
                     <ul>
-                        <li><a href="#">Home</a></li>
+                        <li><a href="#" id="home-btn" value="Refresh Page" onClick="window.location.reload()">Home</a></li>
                         <li><a href="#" id="genre">Genres</a></li>
                         <li><a href="#">About Us</a></li>
                         <img src="imgs/search-icon.png" alt="search icon" class="search_icon_big">
@@ -73,7 +73,7 @@
     <div class="modal-background-cat hide">
         <aside class="modal-content-cat">
             <span class="close">&times;</span>
-            <h1>GENRES</h1>
+            <h1 class="modal-genres-title">GENRES</h1>
             <ul class="cat-list">
             </ul>
         </aside>
@@ -90,13 +90,13 @@
             <h1><span id="title">TITLE</span><span id="year">YEAR</span></h1>
             <h2 id="author">AUTHOR</h2>
             <h3>SHORT DESCRIPTION</h3>
-            <h5> GENRE </h5>
+            <h5 class="genre"> GENRE </h5>
             <h4 id="stars"> &#9733; &#9733; &#9733; &#9733; &#9734;</h4>
             <button id="myBtn" class="button-info">FULL REVIEW</button>
         </article>
     </template>
 
-    <footer>made by group "books"</footer>
+    <footer>Made by group "Books"</footer>
 
     <script src="script.js"></script>
 

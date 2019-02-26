@@ -19,27 +19,6 @@
      fetch(link).then(e => e.json()).then(data => data.feed.entry.forEach(displayBooksData));
  }
 
- // MODAL CATEGORIES //
-
- function loadCat(link) {
-     fetch(linkCat).then(e => e.json()).then(data => data.feed.entry.forEach(createCategories));
- }
-
- function createCategories(category) {
-     const newLi = document.createElement("li");
-     const newA = document.createElement("a")
-     newA.textContent = category.gsx$genres.$t;;
-     newA.href = "#";
-     newA.addEventListener("click", () => showCategory(category));
-     modalCatList.appendChild(newLi);
-     modalCatList.appendChild(newA);
- }
-
- function showCategory(category) {
-
- }
-
- // END OF MODAL CATEGORIES //
 
  function displayBooksData(data) {
      const clone = template.cloneNode('true');
@@ -84,6 +63,38 @@
 
      main.appendChild(clone);
  }
+
+ // MODAL CATEGORIES //
+
+ function loadCat(link) {
+     fetch(linkCat).then(e => e.json()).then(data => data.feed.entry.forEach(createCategories));
+ }
+
+ function createCategories(category) {
+     //console.log(category);
+     const newLi = document.createElement("li");
+     const newA = document.createElement("a")
+     newA.textContent = category.gsx$genres.$t;
+     newA.href = "#";
+     newA.addEventListener("click", () => showCategory(category.gsx$genres.$t));
+     modalCatList.appendChild(newLi);
+     modalCatList.appendChild(newA);
+ }
+
+ function showCategory(category) {
+     // if the name of the category == name of the category in the article (h5) then display it, otherwise don't //
+      document.querySelectorAll("article").forEach(article =>{
+                if (article.querySelector(".genre").textContent == category) {
+                    article.style.display = "grid";
+                    console.log(category);
+                } else {
+                    article.style.display = "none";
+                    console.log(category);
+                };
+      })
+ };
+
+ // END OF MODAL CATEGORIES //
 
  loadJSON(link);
  loadCat(linkCat);
