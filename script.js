@@ -60,11 +60,18 @@
      clone.querySelector("h3").textContent = data.gsx$shortdescription.$t;
      clone.querySelector("h5").textContent = data.gsx$genres.$t;
      clone.querySelector(".bkm").addEventListener("click", bookmarkChecked);
+     clone.querySelector("#save").addEventListener("click", parentChecked);
 
      function bookmarkChecked(evt) {
          console.log(evt)
          //clone.querySelector(".bkm").classList.remove("bookmark");
          evt.target.classList.toggle("checked");
+     }
+
+      function parentChecked(evt) {
+         console.log(evt)
+         //clone.querySelector(".bkm").classList.remove("bookmark");
+         evt.target.previousElementSibling.classList.toggle("checked");
      }
 
      // ----------------- STARS -----------------
