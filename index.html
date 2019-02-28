@@ -21,7 +21,7 @@
                 <input type="checkbox" id="menu">
                 <nav>
                     <ul>
-                        <li><a href="#" id="home-btn" value="Refresh Page" onClick="window.location.reload()"> RECENT </a></li>
+                        <li><a href="#" id="home-btn" onClick="window.location.reload()"> RECENT </a></li>
                         <li><a href="#" id="genre">Genres</a></li>
                         <li><a href="#">Saved books</a></li>
                         <img src="imgs/search-icon.png" alt="search icon" class="search_icon_big">
@@ -46,12 +46,13 @@
         <aside class="modal-content">
             <span class="close">&times;</span>
             <img class="cover" src="imgs/1.jpg" alt="cover picture">
-            <h1><span id="title">TITLE</span><span id="year">YEAR</span></h1>
-            <h2 id="author">AUTHOR</h2>
+            <h1><span class="title">TITLE</span><span class="year">YEAR</span></h1>
+            <h2 class="author">AUTHOR</h2>
             <h3 id="long">LONG DESCRIPTION</h3>
             <h4 id="price">PRICE</h4>
             <h5 id="pages">PAGES</h5>
-            <h4 id="stars">&#9733; &#9733; &#9733; &#9733; &#9734;</h4>
+            <h4 class="stars">&#9733; &#9733; &#9733; &#9733; &#9734;</h4>
+            <h4 class="stars2">&#9733; &#9733; &#9733; &#9733; &#9733;</h4>
         </aside>
     </div>
 
@@ -76,12 +77,12 @@
         <article>
             <img class="cover" src="imgs/1.jpg" alt="cover picture">
             <div class="bkm bookmark" src="" alt="bookmark"></div>
-            <h1><span id="title">TITLE</span><span id="year">YEAR</span></h1>
-            <h2 id="author">AUTHOR</h2>
+            <h1><span class="title">TITLE</span><span class="year">YEAR</span></h1>
+            <h2 class="author">AUTHOR</h2>
             <h3>SHORT DESCRIPTION</h3>
             <h5 class="genre"> GENRE </h5>
-            <h4 id="stars"> &#9733; &#9733; &#9733; &#9733; &#9734;</h4>
-            <h4 id="stars2">&#9733; &#9733; &#9733; &#9733; &#9733;</h4>
+            <h4 class="stars"> &#9733; &#9733; &#9733; &#9733; &#9734;</h4>
+            <h4 class="stars2">&#9733; &#9733; &#9733; &#9733; &#9733;</h4>
             <button id="myBtn" class="button-info">FULL REVIEW</button>
         </article>
     </template>

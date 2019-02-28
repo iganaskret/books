@@ -39,7 +39,7 @@ h4 {
     margin-right: 10px;
 }
 
-#title {
+.title {
     font-weight: 500;
     font-size: 20px;
 }
@@ -55,7 +55,7 @@ h2 {
 
 }
 
-#year {
+.year {
     font-size: 13px;
 }
 
@@ -290,10 +290,10 @@ main {
     border: 2px solid black;
 }
 
-#stars {
+.stars {
     text-align: center;
 }
-#stars2 {
+.stars2 {
     text-align: center;
 }
 /*  BUTTON */
