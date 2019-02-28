@@ -36,12 +36,17 @@
 
      function detailBooksData(data) {
          modal.querySelector("img").src = "imgs/" + data.gsx$img.$t;
-         modal.querySelector("#title").textContent = data.gsx$title.$t;
-         modal.querySelector("#year").textContent = " (" + data.gsx$publishingyear.$t + ")";
-         modal.querySelector("#author").textContent = data.gsx$author.$t;
+         modal.querySelector(".title").textContent = data.gsx$title.$t;
+         modal.querySelector(".year").textContent = " (" + data.gsx$publishingyear.$t + ")";
+         modal.querySelector(".author").textContent = data.gsx$author.$t;
          modal.querySelector("#long").textContent = data.gsx$longdescription.$t;
          modal.querySelector("#price").textContent = Math.ceil(data.gsx$price.$t) + " $";
          modal.querySelector("#pages").textContent = data.gsx$numberofpages.$t + " pages";
+         if (data.gsx$stars.$t == 1) {
+             modal.querySelector(".stars").style.display = "none";
+         } else {
+             modal.querySelector(".stars2").style.display = "none";
+         };
          modal.classList.remove('hide');
      }
 
@@ -49,12 +54,13 @@
 
      const img = data.gsx$img.$t;
      clone.querySelector("img").src = "imgs/" + data.gsx$img.$t;
-     clone.querySelector("#title").textContent = data.gsx$title.$t;
-     clone.querySelector("#author").textContent = "by " + data.gsx$author.$t;
-     clone.querySelector("#year").textContent = " (" + data.gsx$publishingyear.$t + ")";
+     clone.querySelector(".title").textContent = data.gsx$title.$t;
+     clone.querySelector(".author").textContent = "by " + data.gsx$author.$t;
+     clone.querySelector(".year").textContent = " (" + data.gsx$publishingyear.$t + ")";
      clone.querySelector("h3").textContent = data.gsx$shortdescription.$t;
      clone.querySelector("h5").textContent = data.gsx$genres.$t;
      clone.querySelector(".bkm").addEventListener("click", bookmarkChecked);
+     clone.querySelector("#save").addEventListener("click", parentChecked);
 
      function bookmarkChecked(evt) {
          console.log(evt)
@@ -62,14 +68,18 @@
          evt.target.classList.toggle("checked");
      }
 
+      function parentChecked(evt) {
+         console.log(evt)
+         //clone.querySelector(".bkm").classList.remove("bookmark");
+         evt.target.previousElementSibling.classList.toggle("checked");
+     }
+
      // ----------------- STARS -----------------
 
      if (data.gsx$stars.$t == 1) {
-         const stars = clone.querySelector("#stars");
-         clone.querySelector("#stars").style.display = "none";
+         clone.querySelector(".stars").style.display = "none";
      } else {
-         const stars = clone.querySelector("#stars2");
-         clone.querySelector("#stars2").style.display = "none";
+         clone.querySelector(".stars2").style.display = "none";
      }
 
      // ----------------- STARS END ----------------
@@ -96,15 +106,15 @@
 
  function showCategory(category) {
      // if the name of the category == name of the category in the article (h5) then display it, otherwise don't //
-      document.querySelectorAll("article").forEach(article =>{
-                if (article.querySelector(".genre").textContent == category) {
-                    article.style.display = "grid";
-                    console.log(category);
-                } else {
-                    article.style.display = "none";
-                    console.log(category);
-                };
-      })
+     document.querySelectorAll("article").forEach(article => {
+         if (article.querySelector(".genre").textContent == category) {
+             article.style.display = "grid";
+             console.log(category);
+         } else {
+             article.style.display = "none";
+             console.log(category);
+         };
+     })
  };
 
  // END OF MODAL CATEGORIES //
