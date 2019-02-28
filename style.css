@@ -25,10 +25,6 @@ body {
     margin-bottom: 2em;
 }
 
-#message {
-    font-size: 0.7em;
-}
-
 h1,
 h2,
 h3,
@@ -39,7 +35,7 @@ h4 {
     margin-right: 10px;
 }
 
-#title {
+.title {
     font-weight: 500;
     font-size: 20px;
 }
@@ -55,7 +51,7 @@ h2 {
 
 }
 
-#year {
+.year {
     font-size: 13px;
 }
 
@@ -290,10 +286,10 @@ main {
     border: 2px solid black;
 }
 
-#stars {
+.stars {
     text-align: center;
 }
-#stars2 {
+.stars2 {
     text-align: center;
 }
 /*  BUTTON */
@@ -352,10 +348,16 @@ main {
 
 
 .checked {
-
     border-left: 25px solid #e06256;
     border-right: 25px solid #e06256;
+}
 
+#save {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #e06256;
+    cursor: pointer;
 }
 
 footer {
