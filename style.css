@@ -352,10 +352,20 @@ main {
 
 
 .checked {
-
     border-left: 25px solid #e06256;
     border-right: 25px solid #e06256;
+}
 
+#save {
+    position: relative;
+    right: 15px;
+    top: 15px;
+    color: #e06256;
+}
+
+#save.checked {
+    border-left: 0;
+    border-right: 0;
 }
 
 footer {
