@@ -144,59 +144,6 @@ h2 {
     }
 }
 
-/* BIG SCREENS */
-@media all and (min-width:700px) {
-    input:not(:checked) ~ nav {
-        display: block;
-    }
-
-    label {
-        display: none;
-    }
-
-    #menu {
-        display: none;
-    }
-
-    /* UL TAG BIG SCREENS */
-
-    nav {
-        float: right;
-        top: 0;
-    }
-
-    nav li {
-        float: left;
-        width: 110px;
-        height: 70px;
-        line-height: 50px;
-        text-align: center;
-        list-style: none;
-    }
-
-    nav li a {
-        color: var(--text-color);
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: 300;
-        font-family: 'Lato', sans-serif;
-        font-size: 15px;
-        display: block;
-    }
-
-    nav li:hover {
-        background: var(--special-color);
-    }
-
-    nav li a:hover {
-        color: var(--main-bg-color);
-    }
-
-    .navbar {
-        overflow: hidden;
-    }
-}
-
 /* LOGO */
 
 #name {
@@ -467,4 +414,61 @@ a {
 
 .cat-list :hover {
     animation: genrehover 1.8s;
+}
+
+/* BIG SCREENS */
+@media all and (min-width:700px) {
+    input:not(:checked) ~ nav {
+        display: block;
+    }
+
+    label {
+        display: none;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    /* UL TAG BIG SCREENS */
+
+    nav {
+        float: right;
+        top: 0;
+    }
+
+    nav li {
+        float: left;
+        width: 110px;
+        height: 70px;
+        line-height: 50px;
+        text-align: center;
+        list-style: none;
+    }
+
+    nav li a {
+        color: var(--text-color);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-family: 'Lato', sans-serif;
+        font-size: 15px;
+        display: block;
+    }
+
+    nav li:hover {
+        background: var(--special-color);
+    }
+
+    nav li a:hover {
+        color: var(--main-bg-color);
+    }
+
+    .navbar {
+        overflow: hidden;
+    }
+
+    .modal-content {
+        padding: 5em;
+    }
 }
