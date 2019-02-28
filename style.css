@@ -1,13 +1,10 @@
 /* ROOT */
 
 :root {
-    --main-bg-color: #ffffff;
-    --text-color: #000000;
-    --special-color: #eea549;
+    --main-bg-color: #FFF;
+    --text-color: #000;
+    --special-color: #fdc163;
 }
-
-
-
 
 /* BODY */
 
@@ -28,23 +25,44 @@ body {
     margin-bottom: 2em;
 }
 
+#message {
+    font-size: 0.7em;
+}
+
 h1,
 h2,
 h3,
 h4 {
     font-weight: 100;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #title {
     font-weight: 500;
+    font-size: 20px;
 }
 
 h1 {
     text-align: center;
+    text-align: left;
+    margin-bottom: -5px;
+}
+
+h2 {
+    font-size: 18px;
+
 }
 
 #year {
     font-size: 13px;
+}
+
+.genre {
+    color: var(--special-color);
+    font-size: 15px;
+    margin: 0.5em;
 }
 
 /* NAVIGATION */
@@ -56,64 +74,163 @@ h1 {
 
 .navbar {
     width: 100%;
-    overflow: hidden;
     height: 70px;
     line-height: 70px;
     background: var(--main-bg-color);
     border-bottom: 3px solid var(--special-color);
+
 }
 
-.logo{
+.logo {
     width: 60px;
     float: left;
     padding: .3em;
 }
 
-/* UL TAG */
 
-.menu{
+.search_icon_big {
+    width: 20px;
     float: right;
-    top: 0;
+    margin-top: inherit;
+    margin-left: 30px;
+    margin-right: 0;
 }
 
-.menu li{
-    float: left;
-    width: 110px;
-    height: 70px;
-    line-height: 50px;
-    text-align: center;
-    list-style: none;
+/* SMALL SCREENS */
+@media all and (max-width:700px) {
+    nav {
+        display: none;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    label {
+        display: block;
+        float: right;
+    }
+
+    #menu:checked ~ nav {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        margin-top: 57px;
+        right: 8%;
+        padding: 5px;
+    }
+
+    nav li {
+        line-height: 25px;
+        text-align: right;
+        list-style: none;
+        border-bottom: 1.5px solid var(--special-color);
+    }
+
+    nav li a {
+        color: var(--text-color);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-family: 'Lato', sans-serif;
+        font-size: 15px;
+        display: block;
+    }
+
+    nav li a:hover {
+        color: var(--special-color);
+    }
+
+    .recent {
+        margin-top: 130px;
+    }
 }
 
-.menu li a{
-    color: var(--text-color);
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-family: 'Lato', sans-serif;
-    font-size: 15px;
-    display: block;
-}
+/* BIG SCREENS */
+@media all and (min-width:700px) {
+    input:not(:checked) ~ nav {
+        display: block;
+    }
 
-.menu li:hover{
-    background: var(--special-color);
-}
-.menu li a:hover{
-    color: var(--main-bg-color);
-}
+    label {
+        display: none;
+    }
 
+    #menu {
+        display: none;
+    }
 
+    /* UL TAG BIG SCREENS */
+
+    nav {
+        float: right;
+        top: 0;
+    }
+
+    nav li {
+        float: left;
+        width: 110px;
+        height: 70px;
+        line-height: 50px;
+        text-align: center;
+        list-style: none;
+    }
+
+    nav li a {
+        color: var(--text-color);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-family: 'Lato', sans-serif;
+        font-size: 15px;
+        display: block;
+    }
+
+    nav li:hover {
+        background: var(--special-color);
+    }
+
+    nav li a:hover {
+        color: var(--main-bg-color);
+    }
+
+    .navbar {
+        overflow: hidden;
+    }
+}
 
 /* LOGO */
 
-#logo {
+#name {
     margin-top: 2em;
-    margin-bottom: 2em;
-    text-transform: uppercase;
+    margin-bottom: 4em;
     font-weight: 900;
     font-family: 'Lato', sans-serif;
     text-align: center;
     letter-spacing: 9px;
+    color: var(--special-color);
+    font-size: 35px;
+}
+
+#quote {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-weight: 200;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    letter-spacing: 4px;
+    font-size: 18px;
+}
+#quote2 {
+    margin-bottom: 2em;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    letter-spacing: 4px;
+    font-size: 15px;
+    float: right;
 }
 
 hr {
@@ -132,7 +249,8 @@ article {
     margin-bottom: 2em;
     display: grid;
     padding: .5em;
-    border: 1px solid var(--text-color);
+    border: 1.3px solid var(--text-color);
+    position: relative;
     /*grid-template-columns: 2fr;*/
     /*grid-auto-flow: dense;*/
     /*grid-template-rows: 6fr;*/
@@ -146,7 +264,7 @@ article:hover {
 
 
 .recent {
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: 400;
     font-family: 'Lato', sans-serif;
     text-align: left;
@@ -169,12 +287,15 @@ main {
     margin-left: auto;
     margin-right: auto;
     grid-template-columns: 1fr;
+    border: 2px solid black;
 }
 
 #stars {
     text-align: center;
 }
-
+#stars2 {
+    text-align: center;
+}
 /*  BUTTON */
 
 .button-info {
@@ -183,9 +304,10 @@ main {
     text-transform: uppercase;
     font-family: 'Lato', sans-serif;
     font-size: 10px;
+    color: #fff;
     letter-spacing: 2px;
     border: solid black 1px;
-    background-color: inherit;
+    background-color: black;
     padding: 12px 66px;
     cursor: pointer;
     display: block;
@@ -200,38 +322,147 @@ main {
     background-color: grey;
 }
 
-/*  SEARCH */
+/* BOOKMARK */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
 
-#search {
+.bookmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 70px;
+    width: 50px;
+    padding: 0px;
+    -webkit-transform: rotate(0deg) skew(0deg);
+    transform: rotate(0deg) skew(0deg);
+    border-left: 25px solid lightgray;
+    border-right: 25px solid lightgray;
+    border-bottom: 25px solid transparent;
+    margin: 7px;
+    margin-top: 0;
+    cursor: pointer;
+    font-size: 0.8em;
+    text-align: right;
+}
+
+
+.checked {
+
+    border-left: 25px solid #e06256;
+    border-right: 25px solid #e06256;
+
+}
+
+footer {
+    text-align: center;
+    padding: 0.4em;
+    color: black;
+}
+
+/*  MODAL */
+
+/* CATEGORIES MADE BY JAVA SCRIPT */
+
+.hide {
+    display: none;
+}
+
+.modal-background {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-content {
+    background-color: var(--main-bg-color);
+    border: 1px solid black;
+    margin: 1em;
+    padding: 1em;
+    width: 98%;
+}
+
+aside .cover {
     display: block;
     margin-left: auto;
-    margin-right: 0;
-    margin-bottom: 1em;
+    margin-right: auto;
 }
 
-/*  BUTTON  SEARCH*/
-
-#site-search {
-    font-family: 'Lato', sans-serif;
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
-.button-search {
-    text-align: right;
+.close:hover,
+.close:focus {
+    color: #000;
     text-decoration: none;
-    text-transform: uppercase;
-    font-family: 'Lato', sans-serif;
-    font-size: 10px;
-    letter-spacing: 2px;
-    border: solid black 1px;
-    background-color: inherit;
-    padding: 10px 36px;
     cursor: pointer;
-    margin-bottom: 1em;
 }
 
-footer{
+/* GENRES MODAL */
+
+.modal-background-cat {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+
+.modal-content-cat {
+    background-color: var(--main-bg-color);
+    margin: 1em;
+    padding: 2em;
+}
+
+.modal-genres-title {
     text-align: center;
-    padding: 1em;
+    font-size: 2em;
+    font-weight: 500;
+    margin-bottom: 30px;
 }
 
-/*  BUTTON  NEW*/
+a {
+    color: var(--special-color);
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+}
+
+.cat-list {
+    margin: auto;
+    margin-left: -3%;
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+    line-height: 40px;
+    font-size: 18px;
+}
+
+@keyframes genrehover {
+    from {
+        font-size: 18px;
+        color: var(--special-color);
+    }
+
+    to {
+        font-size: 22px;
+        color: #aaaaaa;
+    }
+}
+
+.cat-list :hover {
+    animation: genrehover 1.8s;
+}

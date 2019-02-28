@@ -6,68 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="books" content="books">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" type="image/jpg" href="imgs/logo.jpg">
     <title>What Should I Read?</title>
 </head>
 
 <body>
-
-    <!--<img src="imgs/search-icon.png" alt="search icon" id="search-icon"> -->
-    <!--<h1 id="logo">WHAT SHOULD I READ? </h1>-->
-
     <div class="navbar">
         <div class="container">
             <div class="logo_div">
                 <img src="imgs/logo.jpg" alt="logo" class="logo">
-
             </div>
-            <div class="navbar_links">
-
-                <ul class="menu">
-
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Genres</a></li>
-                    <li><a href="#">About Us</a></li>
-                </ul>
+            <div class="menu">
+                <label for="menu"> &#9776; </label>
+                <input type="checkbox" id="menu">
+                <nav>
+                    <ul>
+                        <li><a href="#" id="home-btn" value="Refresh Page" onClick="window.location.reload()"> RECENT POSTS </a></li>
+                        <li><a href="#" id="genre">Genres</a></li>
+                        <li><a href="#">Saved books</a></li>
+                        <img src="imgs/search-icon.png" alt="search icon" class="search_icon_big">
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
 
+    <h1 id="name">What should I read?</h1>
+    <h1 id="quote">"I have always imagined that Paradise will be some kind of library"</h1>
+    <h1 id="quote2">- Jorge Luis Borges</h1>
 
-    <!--<div id="search">
-        <label for="site-search">Search the book by genre:</label>
-        <input type="search" id="site-search" name="q" aria-label="Search through site content">
-
-        <button class="button-search">Search</button>
-    </div>-->
-
-
-
-
-    <h2 class="recent">Recent posts</h2>
+    <h2 class="recent">Recent posts <span id="message"> (click on the bookmark and save for later!) </span></h2>
 
 
     <main></main>
 
+    <!-- The Modal Book Info-->
+
+    <div class="modal-background hide">
+        <aside class="modal-content">
+            <span class="close">&times;</span>
+            <img class="cover" src="imgs/1.jpg" alt="cover picture">
+            <h1><span id="title">TITLE</span><span id="year">YEAR</span></h1>
+            <h2 id="author">AUTHOR</h2>
+            <h3 id="long">LONG DESCRIPTION</h3>
+            <h4 id="price">PRICE</h4>
+            <h5 id="pages">PAGES</h5>
+            <h4 id="stars">&#9733; &#9733; &#9733; &#9733; &#9734;</h4>
+        </aside>
+    </div>
+
+    <!-- End of the Modal Book Info -->
+
+    <!-- Modal Categories -->
+
+    <div class="modal-background-cat hide">
+        <aside class="modal-content-cat">
+            <span class="close">&times;</span>
+            <h1 class="modal-genres-title">GENRES</h1>
+            <ul class="cat-list">
+            </ul>
+        </aside>
+    </div>
+
+    <!-- End of the Modal Categories -->
+
+    <!-- Template -->
 
     <template>
         <article>
             <img class="cover" src="imgs/1.jpg" alt="cover picture">
-            <div id="bookmark" src="" alt="bookmark"></div>
+            <div class="bkm bookmark" src="" alt="bookmark"></div>
             <h1><span id="title">TITLE</span><span id="year">YEAR</span></h1>
             <h2 id="author">AUTHOR</h2>
             <h3>SHORT DESCRIPTION</h3>
+            <h5 class="genre"> GENRE </h5>
             <h4 id="stars"> &#9733; &#9733; &#9733; &#9733; &#9734;</h4>
-            <!--h5>PRICE</h5>
-            <h6>SHORT DESCRIPTION</h6>
-            <h7>LONG DESCRIPTION</h7>
-            FYI
-            H8 AND H7 DON'T EXIST, ONLY H1-H6
-            <h8>PAGES</h8>-->
-            <button class="button-info">FULL REVIEW</button>
+            <h4 id="stars2">&#9733; &#9733; &#9733; &#9733; &#9733;</h4>
+            <button id="myBtn" class="button-info">FULL REVIEW</button>
         </article>
     </template>
 
-    <footer>made by group "books"</footer>
+    <footer>Made by group "Books"</footer>
 
     <script src="script.js"></script>
 
