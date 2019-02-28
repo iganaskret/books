@@ -62,6 +62,18 @@
          evt.target.classList.toggle("checked");
      }
 
+     // ----------------- STARS -----------------
+
+     if (data.gsx$stars.$t == 1) {
+         const stars = clone.querySelector("#stars");
+         clone.querySelector("#stars").style.display = "none";
+     } else {
+         const stars = clone.querySelector("#stars2");
+         clone.querySelector("#stars2").style.display = "none";
+     }
+
+     // ----------------- STARS END ----------------
+
      main.appendChild(clone);
  }
 
