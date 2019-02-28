@@ -50,6 +50,7 @@
          modal.classList.remove('hide');
      }
 
+
      // ----------------- END MODAL INFORMATION -----------------
 
      const img = data.gsx$img.$t;
